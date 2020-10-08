@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="images/olxlogo.png" type="image/png" sizes="16x16">
+        <title>OlX</title>
+       
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+    <style>
+    .card-img-top {
+
+    height: 211px;
+    }</style>
+<body  onload="detail(getAllUrlParams(window.location.href,'key'))">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 14px;">
+      <a class="navbar-brand" href="Index.html"><img  style="width: 40px; height: 40px;" src="images/olxlogo.png" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="Index.html?cat=Mobile">Mobiles</a>
+              <a class="dropdown-item" href="Index.html?cat=Bike">Bikes</a>
+              <a class="dropdown-item" href="Index.html?cat=Fashion">Fashions</a>
+              <a class="dropdown-item" href="Index.html?cat=Furniture">Furniture</a>
+              <a class="dropdown-item" href="Index.html?cat=Pet">Pets</a>
+              <a class="dropdown-item" href="Index.html?cat=Job">Jobs</a>
+              <a class="dropdown-item" href="Index.html?cat=Car">Car</a>
+              <a class="dropdown-item" href="Index.html?cat=Electronic">Electronics Items</a>
+              <a class="dropdown-item" href="Index.html?cat=Prperty">Properties</a>
+              <a class="dropdown-item" href="Index.html?cat=Services">Services</a>
+            
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li> -->
+        </ul>
+   
+        <div class="form-inline my-2 my-lg-0">
+          <a href="indexlogin.html" class="btn btn-outline-success my-2 my-sm-0" >My Account</a>
+          <a href="add.html" class="btn btn-outline-success my-2 my-sm-0" >Create Your add</a>
+          <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
+
+      <button class="btn btn-outline-success my-2 my-sm-0" onclick="search(); " >Search</button>
+
+        </div>
+
+      </div>
+    </nav>
+ 
+      <div class="row">
+        
+        <main class="col-lg-8" id="prodDetailsParent"><div class="block about-listing">
+                              <p><img id="pimage"  src="images/loader.gif" alt="Example blog post alt" class="img-fluid"></p>
+                              <header>
+                                <h3 class="has-lines" id="pname"> Loading...</h3>
+                              </header>
+                              <p   id="pdetail">.</p>
+                              </div></main>
+        <!-- Opening Hours      -->
+        <aside class="col-lg-4" id="prodDetails"><div><div class="widget opening-hours">
+                            <header>
+                              <h3 class="has-lines"> Details </h3>
+                            </header>
+                            <div class="days">
+                              <div class="day d-flex justify-content-between"><strong>Price</strong><span id="price">Loading...</span></div>
+                              <div class="day d-flex justify-content-between"><strong>Model</strong><span id="pmodel">Loading...</span>
+                            </div>
+                            <div class="">
+                              <center>
+                                <button type="button" onclick="saveAds('-LHCHQaIcgPAkKhB36AP','zeeshan@clickshopping.pk')" class="btn btn-outline-success my-2 my-sm-0"><i class="fa fa-heart-o"></i> Save</button>
+                              </center> 
+                            </div>
+                          </div>
+                          <div class="widget opening-hours">
+                            <header>
+                              <h3 class="has-lines"> Contact </h3>
+                            </header>
+                            <div class="days">
+                              <div class="day d-flex justify-content-between"><strong>Name</strong><span id="sname">Loading...</span></div>
+                              <div class="day d-flex justify-content-between"><strong>Email</strong><span><a id="semail" href="" class="text-decoration-none">Loading...</a></span></div>
+                              <div class="day d-flex justify-content-between"><strong>Phone</strong><span id="sno">Loading...</span></div>
+                              <div class="">
+                                    <center>
+                                      <button type="button" onclick="chat()" class="btn btn-outline-success my-2 my-sm-0"> <i class="fa fa-comments-o"></i> Chat
+                                    </button></center> 
+                                  </div>
+                            </div>
+                          </div></div></aside>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="page-footer font-small  pt-4">
+    
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+    
+          <!-- Grid row -->
+          <div class="row">
+    
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+    
+              <!-- Content -->
+              <h5 class="text-uppercase">OlX Pakistan</h5>
+              <p>OLX.com.pk is a free local classifieds site. Sell anything from used cars to mobiles, furniture, laptops, clothing and more. Submit ads for free and without creating an account. If you want to buy something - here you will find interesting items, cheaper than in the store. Start buying and selling in the most easy way on OLX.com.pk.</p>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none pb-3">
+    
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+    
+                <!-- Links -->
+                <h5 class="text-uppercase">Links</h5>
+    
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="aboutus.html">About Us</a>
+                  </li>
+                  <li>
+                    <a href="contactus.html">contactus</a>
+                  </li>
+                  <li>
+                    <a href="terms.html">Trems and conditions</a>
+                  </li>
+                  <li>
+                    <a href="http://joinolx.com/">Join Olx</a>
+                  </li>
+                </ul>
+    
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+    
+                <!-- Links -->
+                <h5 class="text-uppercase">Social Links</h5>
+    
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="https://www.facebook.com/olxpakistan/">Facebook</a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/olx_pakistan?lang=en">Twitter</a>
+                  </li>
+                  <li>
+                    <a href="https://plus.google.com/communities/113393419112738306764">Google+</a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UCARDDjJnW7IRBpo_AP7WTHQ"> YouTube</a>
+                  </li>
+                </ul>
+    
+              </div>
+              <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <!-- Copyright -->
+        <div style="background-color: #28a745;" class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="Index.html" style="color:white !important;"> OLX Pakistan</a>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+      <!-- Footer -->
+    
+
+
+</div>
+
+
+
+
+</div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="js/app.js"></script>
+</html>    
